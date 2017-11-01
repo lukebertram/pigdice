@@ -11,6 +11,14 @@ Die.prototype.roll = function(){
   return this.result;
 }
 
+function talleyBoard(player, result) {
+  if (result === 1) {
+    player.turnTally = 0;
+  } else {
+    player.turnTally += result;
+  }
+}
+
 //Player object definition
 function Player(playerId){
   this.id = playerId;
@@ -30,7 +38,8 @@ $(document).ready(function(){
     //display the result of the roll
     $("#roll-result").text(pigDie.result);
     //add the result of the roll to player tally
-    playerOne.turnTally += pigDie.result;
+    // playerOne.turnTally += pigDie.result;
+    talleyBoard(playerOne, pigDie.result);
     //display the new total of player's Turn Tally
     $("#tally").text(playerOne.turnTally);
   });
