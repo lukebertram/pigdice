@@ -5,3 +5,8 @@ body{
 .hidden{
   display: none;
 }
+
+#roll-result,
+#tally         {
+  text-align: center;
+}
