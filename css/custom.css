@@ -33,3 +33,7 @@ span#player-turn {
   font-family: monospace;
   font-size: 3em;
 }
+.end-screen{
+  display: none;
+  font-family: monospace;
+}

@@ -66,8 +66,14 @@ $(document).ready(function(){
   $("#game-start").submit(function(event){
     event.preventDefault();
     //set player names
-    playerOne.id = $("#player-one-name").val();
-    playerTwo.id = $("#player-two-name").val();
+    var p1 = $("#player-one-name").val();
+    var p2 = $("#player-two-name").val();
+    if (p1 !== ""){
+      playerOne.id = p1;
+    }
+    if (p2 !== ""){
+      playerTwo.id = p2;
+    }
     //set max score
     var goal = parseInt($("#score-goal").val());
     if (goal){
@@ -91,8 +97,15 @@ $(document).ready(function(){
     //display the new total of player's Turn Tally
     $("#tally").text(currentPlayer.turnTally);
     if ( (currentPlayer.turnTally + currentPlayer.score) >= game.endScore) {
-      alert("game over, you broke it")
+      //show end screen
+      $(".end-screen h1").text(game.currentPlayer().id + " is the winner!");
+      $(".end-screen").show();
+      $(".hidden").hide();
     }
+  });
+  $("#replay").click(function(){
+    $(".form-container").show();
+    $(".end-screen").hide();
   });
 
   //when the hold button is clicked
