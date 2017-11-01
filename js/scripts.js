@@ -57,8 +57,8 @@ function Player(playerId){
 var clearScores = function(){
   $("#roll-result").text("");
   $("#tally").text("");
-  $(".player1 p").text("");
-  $(".player2 p").text("");
+  $(".player1 p").text("000");
+  $(".player2 p").text("000");
   $("#player-turn").text("");
 }
 
@@ -78,9 +78,11 @@ $(document).ready(function(){
     var p2 = $("#player-two-name").val();
     if (p1 !== ""){
       playerOne.id = p1;
+      $("#p1-name-board").text(p1);
     }
     if (p2 !== ""){
       playerTwo.id = p2;
+      $("#p2-name-board").text(p2);
     }
     //set max score
     var goal = parseInt($("#score-goal").val());
