@@ -42,6 +42,6 @@ Turns - implement a game model to track turns, players, score totals
 * Input:
 * Output:
 
-Here's another one
-* Input:
-* Output:
+On a roll of 1, switch player turns
+* Input: "roll die" - 1
+* Output: Toggle game.turn, set current player's turn tally to 0

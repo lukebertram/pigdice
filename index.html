@@ -10,6 +10,31 @@
   </head>
   <body>
     <div class="container">
+      <div class="row">
+        <div class="player1 score col-md-3">
+          Player 1
+          <p>000</p>
+        </div>
+        <div class="spacer col-md-2">
+
+        </div>
+        <div class="score-goal col-md-2">
+
+        </div>
+        <div class="spacer col-md-2">
+
+        </div>
+        <div class="player2 score col-md-3">
+          Player 2
+          <p>000</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+          <span id="player-turn"></span>
+        </div>
+      </div>
       <form id="game-start" class="hidden">
         enter player names
         enter score to play to
@@ -20,6 +45,7 @@
           <div class="card-header"><h1>RESULT</h1></div>
           <h1 id="roll-result"></h1>
           <button type="button" class="btn btn-primary" id="roll">Roll</button>
+          <button type="button" class="btn btn-secondary" id="hold">Hold Up</button>
         </div>
 
         <div class="tally-display col-md-6 card">

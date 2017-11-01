@@ -10,3 +10,26 @@ body{
 #tally         {
   text-align: center;
 }
+
+span#player-turn {
+  text-align: center;
+  font-size: 5em;
+  font-family: monospace;
+}
+
+.row {
+  text-align: center;
+}
+.main-info {
+  text-align: center;
+}
+.player1{
+  text-align: left;
+}
+.player2{
+  text-align: right;
+}
+.score{
+  font-family: monospace;
+  font-size: 3em;
+}
