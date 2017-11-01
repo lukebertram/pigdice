@@ -53,6 +53,14 @@ function Player(playerId){
   this.turnTally = 0;
 }
 
+//clear displayed scores and player turn name
+var clearScores = function(){
+  $("#roll-result").text("");
+  $("#tally").text("");
+  $(".player1 p").text("");
+  $(".player2 p").text("");
+  $("#player-turn").text("");
+}
 
 //GAME SETUP
 var endScore = 100;
@@ -81,9 +89,15 @@ $(document).ready(function(){
     }
     $(".form-container").hide();
     $(".hidden").show();
+    playerOne.score = 0;
+    playerTwo.score = 0;
+    playerOne.turnTally = 0;
+    playerTwo.turnTally = 0;
+    clearScores();
+    $("#player-turn").text(game.currentPlayer().id + "'s turn");
   })
 
-  $("#player-turn").text(game.currentPlayer().id + "'s turn");
+  // $("#player-turn").text(game.currentPlayer().id + "'s turn");
   //when the roll button is clicked
   $("#roll").click(function(){
     var currentPlayer = game.currentPlayer();
@@ -103,9 +117,13 @@ $(document).ready(function(){
       $(".hidden").hide();
     }
   });
+
+  //when the replay button is clicked after a game has concluded
   $("#replay").click(function(){
+
     $(".form-container").show();
     $(".end-screen").hide();
+
   });
 
   //when the hold button is clicked
