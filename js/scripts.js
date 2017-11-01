@@ -63,6 +63,20 @@ var game = new Game(playerOne, playerTwo, pigDie, endScore);
 
 //front-end facsimile
 $(document).ready(function(){
+  $("#game-start").submit(function(event){
+    event.preventDefault();
+    //set player names
+    playerOne.id = $("#player-one-name").val();
+    playerTwo.id = $("#player-two-name").val();
+    //set max score
+    var goal = parseInt($("#score-goal").val());
+    if (goal){
+      game.endScore = goal;
+    }
+    $(".form-container").hide();
+    $(".hidden").show();
+  })
+
   $("#player-turn").text(game.currentPlayer().id + "'s turn");
   //when the roll button is clicked
   $("#roll").click(function(){
